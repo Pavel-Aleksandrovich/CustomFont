@@ -2,7 +2,7 @@
 
 ## SwiftUI
 
-В iOS 14 или более поздних версиях, кастомные шрифты масштабируются автоматически.
+В iOS 14 или более поздних версиях, кастомные шрифты масштабируются автоматически:
 
 
 
@@ -10,25 +10,27 @@
 
 ## UIKit
 
-В iOS 13 или более поздних версиях, для поддержки Dynamic Type необходимо использовать объект класса UIFontMetrics
+В iOS 13 или более поздних версиях, для поддержки Dynamic Type необходимо использовать объект класса UIFontMetrics:
 
 ```
-    private func scaledFont(_ customFont: UIFont) -> UIFont {
-        
-        // Создали объект UIFontMetrics, который определяет стиль шрифта — например, body или title
-        let fontMetrics = UIFontMetrics(forTextStyle: .body)
-        
-        // Получаем UIFont, который автоматически масштабируется
-        return fontMetrics.scaledFont(for: customFont)
-    }
+private func scaledFont(_ customFont: UIFont) -> UIFont {
+    
+    // Создали объект UIFontMetrics, который определяет стиль шрифта — например, body или title
+    let fontMetrics = UIFontMetrics(forTextStyle: .body)
+    
+    // Получаем UIFont, который автоматически масштабируется
+    return fontMetrics.scaledFont(for: customFont)
+}
 ```
 
-А так же, разрешим автоматическое обновление шрифта при изменении размера
+А так же, разрешим автоматическое обновление шрифта при изменении размера:
 
 ```
-        // Определяем, может ли шрифт автоматически обновляться при изменении размера
-        textLabel.adjustsFontForContentSizeCategory = true
+textLabel.adjustsFontForContentSizeCategory = true
 ```
+
+Код полночтью:
+
 
 
 
