@@ -4,7 +4,7 @@
 
 В iOS 14 или более поздних версиях, кастомные шрифты масштабируются автоматически:
 
-![SwiftUI](https://github.com/Pavel-Aleksandrovich/CustomFont/assets/87460819/04af8aab-08a6-41b3-af8e-75cb569edbdc)
+![SwiftUI](https://github.com/Pavel-Aleksandrovich/CustomFont/assets/87460819/d3f743a1-6591-4c20-9902-ade4bfec4ce7)
 
 ## UIKit
 
@@ -29,6 +29,6 @@ textLabel.adjustsFontForContentSizeCategory = true
 
 Код полностью:
 
-![UIKit](https://github.com/Pavel-Aleksandrovich/CustomFont/assets/87460819/dd89cc21-34c1-48bb-84f6-11c19368b798)
+![UIKit](https://github.com/Pavel-Aleksandrovich/CustomFont/assets/87460819/2e1fd752-880a-4108-8b6e-7d9513c297bb)
 
-
+https://github.com/Pavel-Aleksandrovich/CustomFont/assets/87460819/1a15aaf6-3e23-4a52-a4ed-2c3a0af6703f
