@@ -2,39 +2,33 @@
 
 ## SwiftUI
 
-В iOS 14 или более поздних версиях, кастомные шрифты масштабируются автоматически. Для того, что бы склеить шрифт необходимо использовать символ « + »
+В iOS 14 или более поздних версиях, кастомные шрифты масштабируются автоматически.
 
-![swiftui](https://github.com/Pavel-Aleksandrovich/CustomFont/assets/87460819/59e4cf04-ba8e-4bf1-a257-ced38fe3cd93)
+
+
 
 
 ## UIKit
 
-В iOS 13 или более поздних версиях, для того, что бы склеить кастомные шрифты, необходимо создать NSMutableAttributedString:
+В iOS 13 или более поздних версиях, для поддержки Dynamic Type необходимо использовать объект класса UIFontMetrics
 
 ```
-let attributedText = NSMutableAttributedString(string: "Text custom bold", attributes: [.font: boldFont, .foregroundColor: UIColor.blue])
-```
-
-После, используйте свойство .append для добавления шрифта:
-
-```
-attributedText.append(NSAttributedString(string: "Text custom medium", attributes: [.font: mediumFont, .foregroundColor: UIColor.blue]))
-```
-
-Что бы сделать шрифт масштабируемым, создайте UIFontMetrics с использованием кастомного шрифта и размера:
-
-```
-    private func scaledFont(name: String, size: CGFloat) -> UIFont {
-        let textStyle = UIFont.TextStyle.body
-        let font = UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: size)
-        let metrics = UIFontMetrics(forTextStyle: textStyle)
+    private func scaledFont(_ customFont: UIFont) -> UIFont {
         
-        return metrics.scaledFont(for: font)
+        // Создали объект UIFontMetrics, который определяет стиль шрифта — например, body или title
+        let fontMetrics = UIFontMetrics(forTextStyle: .body)
+        
+        // Получаем UIFont, который автоматически масштабируется
+        return fontMetrics.scaledFont(for: customFont)
     }
 ```
 
-Код полностью:
+А так же, разрешим автоматическое обновление шрифта при изменении размера
 
-![uikit](https://github.com/Pavel-Aleksandrovich/CustomFont/assets/87460819/231a1919-d0ed-42ea-95e5-b98cc92f3a7f)
+```
+        // Определяем, может ли шрифт автоматически обновляться при изменении размера
+        textLabel.adjustsFontForContentSizeCategory = true
+```
+
 
 
